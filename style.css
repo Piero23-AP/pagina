@@ -32,18 +32,42 @@ body {
     border: 2px solid #fff;
     padding: 10px;
     position: relative;
-    background-image: linear-gradient(to bottom, #0039A6 60%, #fff 60%); /* Fondo dividido en dos colores */
 }
 
-.contenedor-potencia-redes-img::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+.contenedor-potencia-redes-info h3 {
+    margin-bottom: 10px;
 }
+
+/* Cambio de estilo para los botones */
+.contenedor_button button,
+.contenedor-atencion-cliente button,
+.login-next-boost button {
+    background-color: #03C8E4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Fin del cambio de estilo para los botones */
+
+.contenedor-atencion-cliente {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedor-atencion-cliente::before {
+    content: '';
+    background-color: #ffffff;
+    position: absolute;
+    width: 55%;
+    height: 25%;
+    z-index: -1;
+    
+}
+
+
 
 .login-next-boost {
     width: 35%;
@@ -60,7 +84,7 @@ body {
     }
 
     .register,
-    .login {
+    .login-next-boost {
         flex: none;
     }
 
@@ -71,5 +95,3 @@ body {
         transform: translateX(-50%) rotate(90deg);
     }
 }
-
-
