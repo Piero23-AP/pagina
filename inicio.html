@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
- 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- 
-  <link rel="stylesheet" href="style.css">
- 
-  <title>UI Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>Album example · Bootstrap</title>
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-   <div class="container">
-    <div class="login">
-        <h2>next boost</h2>
-        <div class="login-items">
-         <form action="">
-           <input type="text" placeholder="Correo" class="correo">
-           <input type="password" placeholder="Contraseña" class="pass">
-           <input type="submit" class="submit" value="Iniciar Sesión">
-         </form>
-       </div>
-     </div>
-   </div>
+    <div class="contenedor">
+        <div class="contenedor-info">
+            <div class="contenedor-potencia-redes">
+                <div class="contenedor-potencia-redes-img">
+                    <img src="/Recurso 1celular 1.svg" alt="App Movil">
+                </div>
+                <div class="contenedor-potencia-redes-info">
+
+                    <h3>Potencia tus Redes Sociales y vende más!</h3>
+                    <p>Contrata ahora nuestros paquetes de Diseño gráfico y destaca frente a tu competencia.</p>
+                    <div class="contenedor_button">
+                        <button>Adquirir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-atencion-cliente">
+                <div>
+                    <img src="/client.svg" alt="icon atencion">
+                </div>
+                <div>
+                    <h3>Atención 24/7. ¡Experiencia de soporte técnico única y personalizada!</h3>
+                    <p>Nuestro equipo está listo para brindarte el mejor servicio en todo momento.</p>
+                    <button>Contactenos</button>
+                </div>
+            </div>
+        </div>
+        <div class="login-next-boost">
+            <form method="POST" action="#">
+                <div class="form-img"><img src="/Recurso 4logoazul 1.png" alt="NEXT BOOST"></div>
+
+                <label for="email-form"><span><img src="/Vector.svg" alt=""> </span> Usuario</label>
+                <input type="email" name="email" class="email-form" id="email-form">
+                <label for="contrasena-form"><span><img src="/contraseña.svg" alt=""> </span> Contraseña</label>
+                <input type="password" name="contrasena" class="contrasena-form" id="contrasena-form">
+                <a href="#">Recuperar contraseña</a>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
