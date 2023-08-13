@@ -1,3 +1,35 @@
+<?php
+if (isset($_POST['login'])) {
+    include 'config.php'; // Asegúrate de que el archivo config.php esté en la ubicación correcta
+
+    // Crear la conexión
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    $email = $_POST['email'];
+    $contrasena = $_POST['contrasena'];
+
+    // Verificar las credenciales
+    $consulta = "SELECT * FROM usuarios WHERE correo = '$email' AND contrasena = '$contrasena'";
+    $resultado = $conn->query($consulta);
+
+    if ($resultado->num_rows === 1) {
+
+        header("Location: index.php");
+        exit();
+    } else {
+        $mensaje = "Credenciales incorrectas.";
+    }
+
+
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +40,7 @@
     <meta name="generator" content="Hugo 0.72.0">
     <title>Album example · Bootstrap</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../../html_palomino/pagina/style.css">
 </head>
 
 <body>
@@ -20,7 +52,7 @@
 
             <div class="contenedor-potencia-redes">
                 <div class="contenedor-potencia-redes-img">
-                    <img src="/Recurso 1celular 1.svg" alt="App Movil">
+                    <img src="../../html_palomino/pagina/Recurso 1celular 1.svg" alt="App Movil">
                 </div>
                 <div class="contenedor-potencia-redes-info">
                     <div>
@@ -36,7 +68,7 @@
             </div>
             <div class="contenedor-atencion-cliente">
                 <div>
-                    <img src="/client.svg" alt="icon atencion">
+                    <img src="../../html_palomino/pagina/client.svg" alt="icon atencion">
                 </div>
                 <div>
                     <div>
@@ -48,16 +80,17 @@
             </div>
         </div>
         <div class="login-next-boost">
-            <form method="POST" action="#">
-                <div class="form-img"><img src="/Recurso 4logoazul 1.png" alt="NEXT BOOST"></div>
-                <label for="email-form"><span><img src="/Vector.svg" alt=""> </span> Usuario</label>
+            <form method="POST" action="login.php">
+                <div class="form-img"><img src="../../html_palomino/pagina//Recurso 4logoazul 1.png" alt="NEXT BOOST"></div>
+                <label for="email-form"><span><img src="../../html_palomino/pagina/Vector.svg" alt=""> </span> Usuario</label>
+
                 <input type="email" name="email" class="email-form" id="email-form">
-                <label for="contrasena-form"><span><img src="/contraseña.svg" alt=""> </span> Contraseña</label>
+
+                <label for="contrasena-form"><span><img src="../../html_palomino/pagina/contraseña.svg" alt=""> </span> Contraseña</label>
+
                 <input type="password" name="contrasena" class="contrasena-form" id="contrasena-form">
                 <a href="#">Recuperar contraseña</a>
-                <butto
-                
-                n type="submit">Iniciar Sesión</button>
+                <button ntype="submit">Iniciar Sesión</button>
             </form>
         </div>
     </div>
