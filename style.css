@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 body {
@@ -23,59 +23,152 @@ body {
     width: 65%;
     height: 100vh;
     flex-direction: column;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     gap: 3rem;
 }
 
-.contenedor-potencia-redes-info {
-    border: 2px solid #fff;
-    padding: 10px;
-    position: relative;
+.contenedor-potencia-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    padding: 2rem;
+    border-radius: 30px 0px;
+    color: #FFF;
+    font-weight: 600;
+    text-align: start;
+    gap: 3rem;
 }
-
-.contenedor-potencia-redes-info h3 {
-    margin-bottom: 10px;
-}
-
-/* Cambio de estilo para los botones */
-.contenedor_button button,
-.contenedor-atencion-cliente button,
-.login-next-boost button {
-    background-color: #03C8E4;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-/* Fin del cambio de estilo para los botones */
-
 .contenedor-atencion-cliente {
     display: flex;
     align-items: center;
-    gap: 20px;
-}
-
-.contenedor-atencion-cliente::before {
-    content: '';
-    background-color: #ffffff;
-    position: absolute;
-    width: 55%;
-    height: 25%;
-    z-index: -1;
+    gap: 3rem;
+    border-radius: 30px;
+    background: #FFF;
+    padding: 2rem;
     
 }
+.contenedor-potencia-redes-img {
+    position: relative;
+}
 
+.contenedor-potencia-redes-img::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 110px;
+    width: 110px;
+    background-color: #03C8E4;
+    border-radius: 50%;
+    z-index: -1;
+}
+.contenedor-atencion-cliente h3,
+.contenedor-potencia-redes-info h3 {
+    font-size: 25px;
 
+}
+
+.contenedor-potencia-redes-info p {
+    margin-bottom: 10px;
+}
+
+.contenedor-atencion-cliente-buton,
+.contenedor_button {
+    display: flex;
+    justify-content: end;
+}
+
+.contenedor_button button {
+    background-color: #03C8E4;
+    color: #fff;
+    border-radius: 23px;
+    padding: 09px 27px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.contenedor-atencion-cliente button {
+    background-color: #03C8E4;
+    color: #fff;
+    border-radius: 20px;
+    padding: 13px 27px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.login-next-boost form {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: black;
+    border-radius: 50px 0px;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    gap: 1.5rem;
+    padding: 60px;
+
+}
+
+.login-next-boost form a {
+    text-decoration: none;
+    color: #13177B;
+    font-weight: 600;
+}
 
 .login-next-boost {
     width: 35%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     background-color: #fff;
     justify-content: center;
     align-items: center;
+}
+
+.form-img {
+    display: flex;
+    justify-content: center;
+
+}
+
+.login-next-boost form input {
+    height: 30%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px rgb(8d, 8d, 8d);
+    margin-bottom: 1rem;
+}
+
+.login-next-boost form input:focus {
+    outline: none;
+
+}
+
+.login-next-boost form label {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.login-next-boost form label span {
+    margin-right: 5px;
+}
+
+.login-next-boost button {
+    background-color: #13177B;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 540px) {
