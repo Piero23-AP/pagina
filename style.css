@@ -1,26 +1,29 @@
+/* Importa la fuente 'Poppins' desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-
+/* Estilos para el reseteo de margen, padding, box-sizing y la fuente */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
 }
-
+/* Establece el color de fondo para el cuerpo */
 body {
     background: #13177B;
 }
+/* Oculta el contenido con la clase 'logo-blanco-contenedor' */
 .logo-blanco-contenedor
 {
     display: none;
 }
+/* Configuración de diseño flexible para un contenedor principal */
 .contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
-
+/* Estilos para el contenedor de información */
 .contenedor-info {
     display: flex;
     width: 65%;
@@ -30,7 +33,27 @@ body {
     align-items: center;
     gap: 3rem;
 }
+/* Estilos para el contenedor de atención al cliente */
+.contenedor-atencion-cliente {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    border-radius: 30px;
+    background: #FFF;
+    padding: 2rem;
+    
+}
 
+.contenedor-atencion-cliente button {
+    background-color: #03C8E4;
+    color: #fff;
+    border-radius: 20px;
+    padding: 13px 27px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+/* Estilos para el contenedor de potencia en redes sociales */
 .contenedor-potencia-redes {
     display: flex;
     justify-content: center;
@@ -43,15 +66,7 @@ body {
     text-align: start;
     gap: 3rem;
 }
-.contenedor-atencion-cliente {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    border-radius: 30px;
-    background: #FFF;
-    padding: 2rem;
-    
-}
+/* Estilos para el contenedor de imagen en el contenedor de potencia */
 .contenedor-potencia-redes-img {
     position: relative;
 }
@@ -68,11 +83,6 @@ body {
     border-radius: 50%;
     z-index: -1;
 }
-.contenedor-atencion-cliente h3,
-.contenedor-potencia-redes-info h3 {
-    font-size: 23px;
-
-}
 
 .contenedor-potencia-redes-info p {
     margin-bottom: 10px;
@@ -84,21 +94,16 @@ body {
     justify-content: end;
 }
 
+.contenedor-atencion-cliente h3,
+.contenedor-potencia-redes-info h3 {
+    font-size: clamp(1.5rem,1rem,0.5rem);
+}
+
 .contenedor_button button {
     background-color: #03C8E4;
     color: #fff;
     border-radius: 23px;
     padding: 09px 27px;
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-}
-
-.contenedor-atencion-cliente button {
-    background-color: #03C8E4;
-    color: #fff;
-    border-radius: 20px;
-    padding: 13px 27px;
     cursor: pointer;
     font-size: 16px;
     border: none;
@@ -124,6 +129,12 @@ body {
     font-weight: 600;
 }
 
+.form-img {
+    display: flex;
+    justify-content: center;
+
+}
+
 .login-next-boost {
     width: 35%;
     height: 100vh;
@@ -132,12 +143,6 @@ body {
     background-color: #fff;
     justify-content: center;
     align-items: center;
-}
-
-.form-img {
-    display: flex;
-    justify-content: center;
-
 }
 
 .login-next-boost form input {
@@ -175,29 +180,197 @@ body {
     text-align: center;
 }
 
+@media only screen and (max-width: 1440px) {
+    .login-next-boost form{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 768px){
+    .contenedor {
+        justify-content: center;
 
-@media only screen and (max-width: 900px) {
-    .contenedor{
-        flex-direction: column;
     }
+    .form-img{
+        margin-bottom: 15px;
+    }
+    .contenedor-potencia-redes-info h3{
+        font-size: 16px;
+    }
+    .contenedor-potencia-redes-img img{
+        height: 110px;
+        width: 110px;
 
-    .contenedor-potencia-redes{
-        display: none;
     }
-    .logo-blanco-contenedor{
-        display: block;
+    .contenedor-potencia-redes-img::before {
+        height: 90px;
+        width: 90px;
     }
-    .contenedor-info{
-        height: auto;
+    .contenedor-atencion-cliente  h3{
+        font-size: 16px;
     }
-    .login-next-boost{
-        height: auto;
-        background-color: transparent;
+    .contenedor-potencia-redes {
+        gap: 0.5rem;
+        padding: 1.5rem;
+        font-size: 12px;
     }
-    /*    .logo-blanco-contenedor{
-        display: block;
+    .contenedor-atencion-cliente {
+        gap: 1rem;
+        padding: 2rem;
+        font-size: 12px;
+    }
+    .contenedor-info {
+        width: 30%;
+        height: 100vh;
+        gap: 1rem;
     }
     .login-next-boost {
-        display: block;
-    } */
+        width: 20%;
+        height: 100vh;
+        padding: 0.10rem;
+
+    }
+    .login-next-boost form{
+        width: 80%;
+        height: auto;
+        font-size: 12px;
+        gap: 0.90rem;
+        border-radius: 20px 0px;
+    }
+    .contenedor_button button{
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+    .contenedor-atencion-cliente-buton button{
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    .login-next-boost form button{
+        padding: 7px;
+        font-size: 12px;
+    }
+    .login-next-boost form label {
+        font-size: 15px;
+        font-weight: 300;
+    }
 }
+@media only screen and (max-width: 900px){
+    .contenedor {
+        justify-content: center;
+
+    }
+    .form-img{
+        margin-bottom: 15px;
+    }
+    .contenedor-potencia-redes-info h3{
+        font-size: 16px;
+    }
+    .contenedor-potencia-redes-img img{
+        height: 110px;
+        width: 110px;
+
+    }
+    .contenedor-potencia-redes-img::before {
+        height: 90px;
+        width: 90px;
+    }
+    .contenedor-atencion-cliente  h3{
+        font-size: 16px;
+    }
+    .contenedor-potencia-redes {
+        gap: 0.5rem;
+        padding: 1.5rem;
+        font-size: 12px;
+    }
+    .contenedor-atencion-cliente {
+        gap: 1rem;
+        padding: 2rem;
+        font-size: 12px;
+    }
+    .contenedor-info {
+        width: 60%;
+        height: 100vh;
+        gap: 1rem;
+    }
+    .login-next-boost {
+        width: 40%;
+        height: 100vh;
+        padding: 0.10rem;
+
+    }
+    .login-next-boost form{
+        width: 80%;
+        height: auto;
+        font-size: 12px;
+        gap: 0.90rem;
+        border-radius: 20px 0px;
+    }
+    .contenedor_button button{
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+    .contenedor-atencion-cliente-buton button{
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    .login-next-boost form button{
+        padding: 7px;
+        font-size: 12px;
+    }
+    .login-next-boost form label {
+        font-size: 15px;
+        font-weight: 300;
+    }
+}
+@media only screen and (max-width: 300px) {
+        .contenedor {
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    
+        .contenedor-atencion-cliente-button,
+        .contenedor_button {
+            padding: 10px;
+            font-size: 8px;
+        }
+    
+        .contenedor-potencia-redes {
+            display: none;
+        }
+    
+        .logo-blanco-contenedor {
+            display: block;
+            margin-top: 2rem;
+        }
+    
+        .contenedor-atencion-cliente {
+            font-size: 8px;
+            width: 80%;
+            height: auto;
+        }
+    
+        .contenedor-atencion-cliente h3 {
+            font-size: 12px;
+        }
+    
+        .contenedor-info {
+            height: auto;
+            width: 100%;
+            font-size: 12px;
+            padding: 0px 20px;
+            gap: 0rem;
+        }
+    
+        .login-next-boost {
+            height: auto;
+            background-color: transparent;
+            width: 80%;
+            padding: 0px;
+        }
+    
+        .login-next-boost form {
+            width: 90%;
+        }
+    }
+    
+
