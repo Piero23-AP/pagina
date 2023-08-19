@@ -1,0 +1,55 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
+.dataTables_wrapper {
+  font-family: "Poppins";
+}
+.content h2{
+  text-align: center;
+}
+.content{
+  width: 99%;
+
+  margin-top : 10px ;
+}
+.custem-td {
+  padding-left: .5rem;
+}
+
+
+
+thead {
+  background-color: #4d4c4c;
+  color: white;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: initial;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  width: 10px;
+  height: 40px;
+  display: inline-block;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  font-weight: bold;
+}
+.dataTables_paginate{
+  background-color: transparent;
+}
+
+@media (max-width: 900px) {
+  .dataTables_paginate,
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current ,
+.dataTables_wrapper .dataTables_filter input ,
+  div.dataTables_wrapper div.dataTables_filter ,
+.content{
+  font-size: 15px;
+}
+
+}
