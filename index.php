@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 <body>
     <h1>Bienbenido a la pagina principal</h1>
 </body>
-=======
+======= 
 <?php
 if (isset($_POST['login'])) {
     include 'config.php';
