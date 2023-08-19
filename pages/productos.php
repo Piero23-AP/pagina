@@ -13,14 +13,14 @@
 
     <h2>Lista de productos</h2>
     <?php
-    // API endpoint
+
     $apiEndpoint = "https://nextboostperu.com/gestion/api.php";
 
-    // Fetch data from the API
+
     $response = file_get_contents($apiEndpoint);
     $data = json_decode($response, true);
 
-    // Generate the HTML table
+
     $htmlTable = "<table id='productsTable' class='tabla table-striped table-bordered table-sm'>";
     $htmlTable .= "<thead class='thead text-center align-middle'>
                     <tr>

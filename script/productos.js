@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         procDiv.style.display = "block";
         procDiv.innerHTML = data;
 
-        // Aquí, después de agregar el contenido, inicializa DataTables si es necesario
 
         $(document).ready(function () {
           new DataTable("#productsTable", {
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
               scrollX: false,
               scrollY: true,
               language: {
-                // Agrega las traducciones en español aquí
+
                 sProcessing: "Procesando...",
                 sLengthMenu: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",

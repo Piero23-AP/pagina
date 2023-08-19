@@ -5,13 +5,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
-} /* Reset de margenes y padding para el body */
+}
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Estilos generales para centrar contenido vertical y horizontalmente */
+
 .container-fluid {
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@ body {
 
 }
 
-/* Estilo para el contenedor del formulario */
+
 .contenedor-agregar {
   max-width: 100%;
   padding: 1.5rem;
@@ -42,26 +42,24 @@ body {
   transition: background 0.2s;
 }
 
-/* Cambio de estilo cuando el botón del formulario está enfocado o se le hace hover */
 .contenedor-agregar form button:focus,
 .contenedor-agregar form button:hover {
   background: #0056b3;
 }
 
-/* Estilo para el título del formulario de agregar productos */
+
 .contenedor-agregar form h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* Estilo para los labels en el formulario */
+
 .contenedor-agregar form label {
   font-weight: 500;
   display: block;
   margin-bottom: 0.25rem;
 }
 
-/* Estilo para los inputs en el formulario */
 .contenedor-agregar form input,
 .contenedor-agregar form select {
   width: 100%;
@@ -71,14 +69,14 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Estilo para el input de tipo file en el formulario */
+
 .contenedor-agregar form input[type="file"] {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
 }
 
-/* Estilo para los selects en el formulario */
+
 .contenedor-agregar form select {
   background: #f8fafc;
 }

@@ -1,11 +1,11 @@
 <?php
 if (isset($_POST['login'])) {
-    include 'config.php'; // Asegúrate de que el archivo config.php esté en la ubicación correcta
+    include 'config.php';
 
-    // Crear la conexión
+    
     $conn = new mysqli($servername, $username, $password, $database);
 
-    // Verificar la conexión
+    
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
 
-    // Verificar las credenciales
+    
     $consulta = "SELECT * FROM usuarios WHERE correo = '$email' AND contrasena = '$contrasena'";
     $resultado = $conn->query($consulta);
 

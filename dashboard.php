@@ -138,13 +138,13 @@
       });
 
       if (menuCheckbox.checked) {
-        showHideButton.style.display = "none"; // Ocultar botón cuando el menú está abierto
+        showHideButton.style.display = "none"; 
       } else {
         const windowWidth = window.innerWidth;
         if (windowWidth <= 1000) {
-          showHideButton.style.display = "block"; // Mostrar botón en pantallas menores a 900px cuando el menú está cerrado
+          showHideButton.style.display = "block"; 
         } else {
-          showHideButton.style.display = "none"; // Ocultar botón en pantallas mayores a 900px cuando el menú está cerrado
+          showHideButton.style.display = "none"; 
         }
       }
     }
@@ -173,19 +173,19 @@
       toggleMenu();
     });
 
-    // Ejecutar la detección al cargar la página
+    
     window.addEventListener("load", function() {
       window.dispatchEvent(new Event("resize"));
     });
   </script>
 
   <script>
-    // Función para guardar el estado actual en el Local Storage
+    
     function savePageState(state) {
       localStorage.setItem("pageState", JSON.stringify(state));
     }
 
-    // Función para cargar contenido en el div con el id "page-content-wrapper" y guardar el estado
+  
     function loadContent(url) {
       const pageContentWrapper = document.getElementById("page-content-wrapper");
       fetch(url)
@@ -193,7 +193,7 @@
         .then(content => {
           pageContentWrapper.innerHTML = content;
 
-          // Guardar el estado actual en el Local Storage
+          
           const currentState = {
             url: url,
             content: content

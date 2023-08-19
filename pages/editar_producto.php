@@ -2,12 +2,12 @@
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     $producto_id = $_GET["id"];
 
-    // Realizar la solicitud GET a la API para obtener el producto por ID
+
     $api_url = "https://nextboostperu.com/gestion/api.php";
     $response = file_get_contents($api_url);
     $productos_array = json_decode($response, true);
 
-    // Buscar el producto por ID
+    
     $producto_encontrado = null;
     foreach ($productos_array as $key => $producto) {
         if ($producto["id"] == $producto_id) {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     }
 
     if ($producto_encontrado) {
-        // Mostrar el formulario de edición con los datos del producto
+
         echo "<div style='padding: 20px; border: 1px solid #ccc; border-radius: 5px;'>";
         echo "<form id='editarForm' method='POST' enctype='multipart/form-data'>";
         echo "<input type='hidden' name='id' value='" . $producto_encontrado["id"] . "'>";

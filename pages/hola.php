@@ -1,4 +1,4 @@
-<!-- welcome.html -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-    /* styles.css */
+ 
 
 body {
   margin: 0;
