@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Pedidos Recibidos</h1>
+ <h1>    Lista de usuarios</h1>
 </body>
 </html>

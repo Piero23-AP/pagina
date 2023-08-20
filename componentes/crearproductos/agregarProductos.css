@@ -1,34 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins;
-}
-body {
-  margin: 0;
-  padding: 0;
-}
-
-
-.container-fluid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-}
-
-
-.contenedor-agregar {
-  max-width: 100%;
-  padding: 1.5rem;
-  background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .contenedor-agregar form button {
   display: block;
   width: 100%;
@@ -67,11 +37,12 @@ body {
   border: 1px solid #ced4da;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
+  
 }
 
 
 .contenedor-agregar form input[type="file"] {
-  border: none;
+  border: 1px solid #ced4da;
   padding: 0.5rem;
   cursor: pointer;
 }
@@ -79,4 +50,8 @@ body {
 
 .contenedor-agregar form select {
   background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+
 }

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="productos.css" href="style.css">
+  <link rel="stylesheet" href="../../../dashboardLogin/assets/svg/delete.svg">
+  <link rel="stylesheet" href="../../../dashboardLogin/assets/svg/edit.svg">
 </head>
 
 <body>
@@ -41,9 +43,9 @@
       $htmlTable .= "<td class='text-center align-middle'><img src='" . $producto["imagen"] . "' class='img-fluid' width='100'></td>";
       $htmlTable .= "<td class='text-center align-middle'>
                       
-      <a href='#' title='Editar' class='edit mb-1 edit-button' data-bs-toggle='modal' data-bs-target='#editar_producto_modal' data-product-id='" . urlencode($producto["id"]) . "'><img src='svg/edit.svg' alt=''></a>
+      <a href='#' title='Editar' class='edit mb-1 edit-button' data-bs-toggle='modal' data-bs-target='#editar_producto_modal' data-product-id='" . urlencode($producto["id"]) . "'><img src='../../../dashboardLogin/assets/svg/edit.svg' alt=''></a>
                       
-      <a href='#' title='Eliminar' class='mb-1 deleteButton' data-bs-toggle='modal' data-bs-target='#eliminar_productoModal' data-product-id='" . $producto["id"] . "'><img src='svg/delete.svg' alt=''></a>
+      <a href='#' title='Eliminar' class='mb-1 deleteButton' data-bs-toggle='modal' data-bs-target='#eliminar_productoModal' data-product-id='" . $producto["id"] . "'><img src='../../../dashboardLogin/assets/svg/delete.svg' alt=''></a>
                     </td>";
       $htmlTable .= "</tr>";
     }

@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   curl_close($ch);
 
-  header("Location: index.php?success=true");
+  header("Location: ../../../dashboardLogin/index.php?success=true");
   exit();
 }
 ?>

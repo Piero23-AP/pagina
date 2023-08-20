@@ -1,10 +1,8 @@
 <?php
-
 session_start();
-require_once "../dashboardLogin/config.php"; ?>
+require_once "../dashboardLogin/config/config.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +19,7 @@ require_once "../dashboardLogin/config.php"; ?>
         <div class="contenedor-info">
             <div class="contenedor-potencia-redes">
                 <div class="contenedor-potencia-redes-img">
-                    <img src="../dashboardLogin/svg/Recurso 1celular 1.svg" alt="App Movil">
+                    <img src="../dashboardLogin/assets/svg/Recurso 1celular 1.svg" alt="App Movil">
                 </div>
                 <div class="contenedor-potencia-redes-info">
                     <div>
@@ -37,7 +35,7 @@ require_once "../dashboardLogin/config.php"; ?>
             </div>
             <div class="contenedor-atencion-cliente">
                 <div>
-                    <img src="../dashboardLogin/svg/client.svg" alt="icon atencion">
+                    <img src="../dashboardLogin/assets/svg/client.svg" alt="icon atencion">
                 </div>
                 <div>
                     <div>
@@ -49,13 +47,13 @@ require_once "../dashboardLogin/config.php"; ?>
             </div>
         </div>
         <div class="login-next-boost">
-            <form method="POST" action="process_login.php">
-                <div class="form-img"><img src="../dashboardLogin/svg/Recurso 4logoazul 1.png" alt="NEXT BOOST"></div>
-                <label for="email-form"><span><img src="../dashboardLogin/svg/Vector.svg" alt=""> </span> Usuario</label>
+            <form method="POST" action="../dashboardLogin/assets/controllers/Auth/process_login.php">
+                <div class="form-img"><img src="../dashboardLogin/assets/svg/Recurso 4logoazul 1.svg" alt="NEXT BOOST"></div>
+                <label for="email-form"><span><img src="../dashboardLogin/assets/svg/Vector.svg" alt=""> </span> Usuario</label>
                 <input type="email" name="email" class="email-form" id="email-form">
 
 
-                <label for="contrasena-form"><span><img src="../dashboardLogin/svg/contraseña.svg" alt=""> </span> Contraseña</label>
+                <label for="contrasena-form"><span><img src="../dashboardLogin/assets/svg/contraseña.svg" alt=""> </span> Contraseña</label>
                 <input type="password" name="contrasena" class="contrasena-form" id="contrasena-form">
 
                 <a href="#">Recuperar contraseña</a>
