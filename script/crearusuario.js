@@ -24,13 +24,3 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
-
-
-
-
-
-
-
-
-
-

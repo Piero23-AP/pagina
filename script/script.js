@@ -1,7 +1,7 @@
-document.write('<script src="../../dashboardLogin/script/menu.js"></script>');
-document.write('<script src="../../dashboardLogin/script/productos.js"></script>');
-document.write('<script src="../../dashboardLogin/script/agregarProducto.js"></script>');
-document.write('<script src="../../dashboardLogin/script/script/editar_eliminar.js"></script>');
+//document.write('<script src="../../dashboardLogin/script/menu.js"></script>');
+//document.write('<script src="../../dashboardLogin/script/productos.js"></script>');
+//document.write('<script src="../../dashboardLogin/script/agregarProducto.js"></script>');
+/*document.write('<script src="../../dashboardLogin/script/script/editar_eliminar.js"></script>');
 document.write('<script src="../../dashboardLogin/script/script/guardarEdicion.js"></script>');
 document.write('<script src="../../dashboardLogin/script/dataTable.js"></script>');
 // scripts.js
@@ -19,4 +19,4 @@ document.write('  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist
 
 
 
-
+*/

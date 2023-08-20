@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Error 403 - Prohibido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Error 403</h1>
+    <p>¡Ups! Parece que no tienes permiso para acceder a esta página.</p>
+    <p>Si crees que esto es un error, por favor regresa e
+      <a id="login-link" href="index.php">inicia sesión</a>
+      <a id="backup-login-link" href="index.php">e iniciar sesión</a>
+    </p>
+  </div>
+
+  <script>
+
+    function urlExists(url, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          callback(xhr.status === 200);
+        }
+      };
+      xhr.open("HEAD", url, true);
+      xhr.send();
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var loginLink = document.getElementById("login-link");
+      var backupLoginLink = document.getElementById("backup-login-link");
+
+      urlExists(loginLink.href, function (exists) {
+        if (!exists) {
+          loginLink.style.display = "none";
+          backupLoginLink.style.display = "inline";
+        } else {
+          backupLoginLink.style.display = "none";
+          loginLink.style.display = "inline";
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

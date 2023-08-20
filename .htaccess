@@ -1,0 +1,18 @@
+
+Options All -Indexes
+ErrorDocument 404 /premium/error_404.html
+ErrorDocument 403 /premium/error_js_403.html
+<FilesMatch "\.(json|js)$">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const listoProductLink = document.getElementById("listproduct");
-  const procDiv = document.getElementById("proc");
-  const agregarProductDiv = document.getElementById("agregarproducto");
-
-  listoProductLink.addEventListener("click", async (event) => {
-    event.preventDefault();
-
-    agregarProductDiv.style.display = "none";
-
-    try {
-      const response = await fetch("../../dashboardLogin/pages/productos.php");
-      const data = await response.text();
-
-      if (procDiv.style.display === "block") {
-        procDiv.style.display = "none";
-      } else {
-        procDiv.style.display = "block";
-        procDiv.innerHTML = data;
-
 
         $(document).ready(function () {
           new DataTable("#productsTable", {
@@ -153,51 +133,3 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
-        $("#editar_producto_modal").on("show.bs.modal", function (event) {
-          var button = $(event.relatedTarget);
-          var productId = button.data("product-id");
-          var modalBody = $(this).find(".modal-body");
-          $.ajax({
-            url: "/pages/editar_producto.php?id=" + productId,
-            type: "GET",
-            success: function (response) {
-              modalBody.html(response);
-            },
-            error: function () {
-              modalBody.html("<p>Error al cargar el formulario de edición.</p>");
-            },
-          });
-        });
-        
-
-        $(document).ready(function () {
-          $(document).on("click", "#deleteButton", function () {
-            var productId = $(this).data("product-id");
-            var modalBody = $("#eliminar_productoModal").find(".modal-body");
-        
-            $.ajax({
-              url: "eliminar_producto.php?id=" + productId,
-              type: "GET",
-              success: function (response) {
-                modalBody.html(response);
-                setTimeout(function () {
-                  $("#eliminar_productoModal").modal("hide");
-                }, 700);
-              },
-              error: function () {
-                modalBody.html("<p>Error al eliminar el producto.</p>");
-              },
-            });
-          });
-        
-          $("#eliminar_productoModal").on("hidden.bs.modal", function () {
-            location.reload();
-          });
-        });
-        
-      }
-    } catch (error) {
-      console.error("Error al obtener datos del archivo PHP:", error);
-    }
-  });
-});

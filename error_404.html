@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error 404 - Página no encontrada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .error-code {
+      font-size: 72px;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    .error-message {
+      font-size: 24px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .go-home {
+      display: flex;
+      justify-content: center;
+    }
+
+    .go-home a {
+      text-decoration: none;
+      color: #3498db;
+      padding: 10px 20px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .go-home a:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="error-message">Oops! Página no encontrada.</div>
+    <div class="go-home">
+      <a id="login-link" href="index.php">Regresar e iniciar sesión</a>
+    </div>
+  </div>
+
+  <script>
+    function urlExists(url, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          callback(xhr.status === 200);
+        }
+      };
+      xhr.open("HEAD", url, true);
+      xhr.send();
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var loginLink = document.getElementById("login-link");
+      urlExists(loginLink.href, function (exists) {
+        if (!exists) {
+
+          window.location.href = "index.php";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

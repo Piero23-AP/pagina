@@ -1,12 +1,9 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabla De Productos</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,7 +33,7 @@
 </head>
 
 <body>
-  <div class="d-flex" id="wrapper">
+  <div class=" container-fluid d-flex" id="wrapper">
     <button id="show-hide-menu" onclick="toggleMenuVisibility()"><img src="../dashboardLogin/svg/dashboard.svg" alt="Menú" width="30"></button>
 
     <div class="contentn text-dark" id="sidebar-wrapper">
@@ -55,11 +52,11 @@
           </a>
         </div>
         <div class="sub-menu">
-          <a href="#" id="agregarProduct" class="list-group-item list-group-item-action pl-4" data-url="../dashboardLogin/pages/agregarproducto.php">
+          <a href="#" id="" onclick="cargarpagina('#cuerpo','../dashboardLogin/componentes/crearproductos/agregarproducto.php') " class="nav-link list-group-item list-group-item-action pl-4">
             <img src="../dashboardLogin/svg/agregarProductos.svg" alt=""><span>Agregar Producto</span>
           </a>
 
-          <a href="#" id="listproduct" class="list-group-item list-group-item-action pl-4" data-url="../dashboardLogin/pages/productos.php">
+          <a href="#" id="" onclick="cargarpagina('#cuerpo','../dashboardLogin/componentes/productos/productos.php') " class="nav-link list-group-item list-group-item-action pl-4">
             <img src="../dashboardLogin/svg/ListaDeProductos.svg" alt=""><span>Lista de Productos</span>
           </a>
         </div>
@@ -87,7 +84,7 @@
           </a>
         </div>
         <div class="sub-menu">
-          <a href="#" class="list-group-item list-group-item-action pl-4">
+          <a href="#" id="" onclick="cargarpagina('#cuerpo','../dashboardLogin/pages/CrearUsuario.php') " class="nav-link list-group-item list-group-item-action pl-4">
             <img src="../dashboardLogin/svg/CrearUsuarios.svg" alt=""><span>Crear usuario</span>
           </a>
           <a href="#" class="list-group-item list-group-item-action pl-4">
@@ -102,21 +99,122 @@
         </div>
       </div>
     </div>
-    <div id="page-content-wrapper" class="contenidoPrincipal">
-      <div id="holaUsuario"></div>
-      <div id="proc"></div>
-      <div id="agregarproducto"></div>
-    </div>
+    <main id="cuerpo" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    </main>
   </div>
+  <script>
+    function cargarpagina(div, url) {
+      $(div).load(url);
+    }
+  </script>
 
-  <script src="../dashboardLogin/script/menuControlScript.js"></script>
- <script src="../dashboardLogin/script/cargadorContenido.js"></script>
+  <script>
+    function checkLoggedIn() {
+      // Verificar si el usuario está autenticado en el almacenamiento local
+      var usuarioAutenticado = localStorage.getItem("usuarioAutenticado");
+
+      if (usuarioAutenticado) {
+        var currentURL = window.location.href;
+        var dashboardURL = "<?php echo $dashboardURL; ?>";
+
+        if (currentURL.includes("index.php")) {
+          // Actualizar la URL del navegador para que apunte al panel de control
+          history.replaceState(null, "", dashboardURL);
+        }
+      }
+    }
+
+    window.onload = checkLoggedIn;
+  </script>
+  <script>
+    const subMenus = document.querySelectorAll(".sub-menu");
+    subMenus.forEach(subMenu => {
+      const menuItem = subMenu.previousElementSibling;
+      menuItem.addEventListener("click", () => {
+        subMenu.classList.toggle("active");
+      });
+    });
+  </script>
+  <script>
+function toggleMenu() {
+    const wrapper = document.getElementById("wrapper");
+    const menuCheckbox = document.getElementById("menu-checkbox");
+    const menuSpans = document.querySelectorAll("#sidebar-wrapper span");
+    const menuPElements = document.querySelectorAll(".menu-p");
+    const subMenuElements = document.querySelectorAll(".sub-menu");
+    const hrElements = document.querySelectorAll("hr");
+    const iconElements = document.querySelectorAll(".list-group-item i");
+    const showHideButton = document.getElementById("show-hide-menu");
+
+    wrapper.classList.toggle("menu-open", menuCheckbox.checked);
+
+    menuSpans.forEach(span => {
+      span.style.display = menuCheckbox.checked ? "none" : "inline-block";
+    });
+
+    menuPElements.forEach(menuP => {
+      menuP.style.width = menuCheckbox.checked ? "auto" : "257px";
+    });
+
+    subMenuElements.forEach(subMenu => {
+      subMenu.style.width = menuCheckbox.checked ? "auto" : "257px";
+    });
+
+    hrElements.forEach(hr => {
+      hr.style.display = menuCheckbox.checked ? "none" : "block";
+    });
+
+    iconElements.forEach(icon => {
+      icon.style.display = menuCheckbox.checked ? "none" : "inline-block";
+    });
+
+    if (menuCheckbox.checked) {
+      showHideButton.style.display = "none";
+    } else {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 1000) {
+        showHideButton.style.display = "block";
+      } else {
+        showHideButton.style.display = "none";
+      }
+    }
+  }
+
+  function toggleMenuVisibility() {
+    const menuCheckbox = document.getElementById("menu-checkbox");
+    menuCheckbox.checked = !menuCheckbox.checked;
+    toggleMenu();
+  }
+
+  window.addEventListener("resize", function() {
+    const windowWidth = window.innerWidth;
+    const menuCheckbox = document.getElementById("menu-checkbox");
+    const showHideButton = document.getElementById("show-hide-menu");
+
+    if (windowWidth <= 1600) {
+      menuCheckbox.checked = true;
+      if (!menuCheckbox.checked) {
+        showHideButton.style.display = "block";
+      }
+    } else {
+      menuCheckbox.checked = false;
+      showHideButton.style.display = "none";
+    }
+
+    toggleMenu();
+  });
+
+
+  window.addEventListener("load", function() {
+    window.dispatchEvent(new Event("resize"));
+  });</script>
+  <script src="../dashboardLogin/script/cargadorContenido.js"></script>
   <script src="../dashboardLogin/script/menu.js"></script>
-  <script src="../dashboardLogin/script/productos.js"></script>
-  <script src="../dashboardLogin/script/agregarProducto.js"></script>
-  <script src="../dashboardLogin/script/editar_eliminar.js"></script>
-  <script src="../dashboardLogin/script/guardarEdicion.js"></script>
-  <script src="../dashboardLogin/script/dataTable.js"></script>
+  <script src="../../dashboardLogin/script/productos.js"></script>
+  <script src="../../dashboardLogin/script/agregarProducto.js"></script>
+  <script src="../../dashboardLogin/script/editar_eliminar.js"></script>
+  <script src="../../dashboardLogin/script/guardarEdicion.js"></script>
+  <script src="../../dashboardLogin/script/dataTable.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
