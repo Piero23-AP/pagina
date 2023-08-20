@@ -47,7 +47,7 @@ require_once "../dashboardLogin/config/config.php"; ?>
             </div>
         </div>
         <div class="login-next-boost">
-            <form method="POST" action="../dashboardLogin/assets/controllers/Auth/process_login.php">
+            <form method="POST" action="../dashboardLogin/controllers/Auth/process_login.php">
                 <div class="form-img"><img src="../dashboardLogin/assets/svg/Recurso 4logoazul 1.svg" alt="NEXT BOOST"></div>
                 <label for="email-form"><span><img src="../dashboardLogin/assets/svg/Vector.svg" alt=""> </span> Usuario</label>
                 <input type="email" name="email" class="email-form" id="email-form">
