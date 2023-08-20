@@ -1,25 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "admin9538125@@asSXUl";
-$database = "DashboardAppDB";
+// config.php
 
+$host = 'localhost';
+$dbname = 'dashboardappdb';
+$username = 'root';
+$password = 'admin9538125@@asSXUl'; 
 
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-    
+try {
+    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
 }
-echo "conexion exitosa";
-
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-
-$conn->close();
 ?>
+
+
+

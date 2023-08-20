@@ -1,31 +1,36 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabla De Productos</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../dashboardLogin/style/agregarProductos.css">
   <link rel="stylesheet" href="../dashboardLogin/style/productos.css">
   <link rel="stylesheet" href="../dashboardLogin/style/style.css">
-   <!-- css -->
+  <!-- css -->
   <link rel="stylesheet" href="../../dashboardLogin/style/style.css">
-<link rel="stylesheet" href="../../dashboardLogin/style/agregarProductos.css">
-<link rel="stylesheet" href="../../dashboardLogin/style/productos.css">
+  <link rel="stylesheet" href="../../dashboardLogin/style/agregarProductos.css">
+  <link rel="stylesheet" href="../../dashboardLogin/style/productos.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  
-  
+
+
   <!-- scripts.js -->
 
 </head>
@@ -72,7 +77,7 @@
             <img src="../dashboardLogin/svg/ListaDeProductos.svg" alt=""><span>Confirmados</span>
           </a>
           <a href="#" class="list-group-item list-group-item-action pl-4">
-            <img src="../dashboardLogin/svg/eviados.svg" alt=""><span>Confirmados</span>
+            <img src="../dashboardLogin/svg/eviados.svg" alt=""><span>Enviados</span>
           </a>
         </div>
         <div class="menu-p">
@@ -91,7 +96,7 @@
         </div>
         <hr class="my-2">
         <div class="menu-p cerrar-sesión">
-          <a href="#" class="list-group-item list-group-item-action">
+          <a href="logout.php" class="list-group-item list-group-item-action">
             <img src="../dashboardLogin/svg/cerrarSesión.svg" alt=""> <span>Cerrar sesión</span>
           </a>
         </div>
@@ -104,114 +109,15 @@
     </div>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const wrapper = document.getElementById("wrapper");
-      const menuCheckbox = document.getElementById("menu-checkbox");
-      const menuSpans = document.querySelectorAll("#sidebar-wrapper span");
-      const menuPElements = document.querySelectorAll(".menu-p");
-      const subMenuElements = document.querySelectorAll(".sub-menu");
-      const hrElements = document.querySelectorAll("hr");
-      const iconElements = document.querySelectorAll(".list-group-item i");
-      const showHideButton = document.getElementById("show-hide-menu");
+  <script src="../dashboardLogin/script/menuControlScript.js"></script>
+ <script src="../dashboardLogin/script/cargadorContenido.js"></script>
+  <script src="../dashboardLogin/script/menu.js"></script>
+  <script src="../dashboardLogin/script/productos.js"></script>
+  <script src="../dashboardLogin/script/agregarProducto.js"></script>
+  <script src="../dashboardLogin/script/editar_eliminar.js"></script>
+  <script src="../dashboardLogin/script/guardarEdicion.js"></script>
+  <script src="../dashboardLogin/script/dataTable.js"></script>
 
-      wrapper.classList.toggle("menu-open", menuCheckbox.checked);
-
-      menuSpans.forEach(span => {
-        span.style.display = menuCheckbox.checked ? "none" : "inline-block";
-      });
-
-      menuPElements.forEach(menuP => {
-        menuP.style.width = menuCheckbox.checked ? "auto" : "257px";
-      });
-
-      subMenuElements.forEach(subMenu => {
-        subMenu.style.width = menuCheckbox.checked ? "auto" : "257px";
-      });
-
-      hrElements.forEach(hr => {
-        hr.style.display = menuCheckbox.checked ? "none" : "block";
-      });
-
-      iconElements.forEach(icon => {
-        icon.style.display = menuCheckbox.checked ? "none" : "inline-block";
-      });
-
-      if (menuCheckbox.checked) {
-        showHideButton.style.display = "none"; 
-      } else {
-        const windowWidth = window.innerWidth;
-        if (windowWidth <= 1000) {
-          showHideButton.style.display = "block"; 
-        } else {
-          showHideButton.style.display = "none"; 
-        }
-      }
-    }
-
-    function toggleMenuVisibility() {
-      const menuCheckbox = document.getElementById("menu-checkbox");
-      menuCheckbox.checked = !menuCheckbox.checked;
-      toggleMenu();
-    }
-
-    window.addEventListener("resize", function() {
-      const windowWidth = window.innerWidth;
-      const menuCheckbox = document.getElementById("menu-checkbox");
-      const showHideButton = document.getElementById("show-hide-menu");
-
-      if (windowWidth <= 1600) {
-        menuCheckbox.checked = true;
-        if (!menuCheckbox.checked) {
-          showHideButton.style.display = "block";
-        }
-      } else {
-        menuCheckbox.checked = false;
-        showHideButton.style.display = "none";
-      }
-
-      toggleMenu();
-    });
-
-    
-    window.addEventListener("load", function() {
-      window.dispatchEvent(new Event("resize"));
-    });
-  </script>
-
-  <script>
-    
-    function savePageState(state) {
-      localStorage.setItem("pageState", JSON.stringify(state));
-    }
-
-  
-    function loadContent(url) {
-      const pageContentWrapper = document.getElementById("page-content-wrapper");
-      fetch(url)
-        .then(response => response.text())
-        .then(content => {
-          pageContentWrapper.innerHTML = content;
-
-          
-          const currentState = {
-            url: url,
-            content: content
-          };
-          savePageState(currentState);
-        })
-        .catch(error => {
-          console.error("Error loading content:", error);
-        });
-    }
-  </script>
-  <script src="../../dashboardLogin/script/menu.js"></script>
-  <script src="../../dashboardLogin/script/productos.js"></script>
-  <script src="../../dashboardLogin/script/agregarProducto.js"></script>
-  <script src="../../dashboardLogin/script/editar_eliminar.js"></script>
-  <script src="../../dashboardLogin/script/guardarEdicion.js"></script>
-  <script src="../../dashboardLogin/script/dataTable.js"></script>
-  
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
